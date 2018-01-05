@@ -1449,7 +1449,11 @@
 			}
 
 			zss_editor.getTitleText = function() {
-				return $('#zss_editor_title').text();
+				var text = $('#zss_editor_content').text()
+				if(text == ""){
+					zss_editor.undo()
+				}
+				return text;
 			}
 
 			zss_editor.getContentText = function() {
